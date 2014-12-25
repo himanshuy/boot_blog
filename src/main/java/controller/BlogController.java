@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import model.Post;
 import service.BlogRepository;
 
@@ -23,6 +25,6 @@ public class BlogController {
 		List<Post> posts = repository.findAll(); 
 		model.addAttribute("posts", posts);
 
-		return home;
+		return "home";
 	}
 }
