@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Blog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Create a new post</h1>
+	<form action="#" th:action="@{/createNewPost}" th:object="${post}" method="post">
+		<p>Title: <input type="text" th:field="*{title}" /></p>
+		<p>Content: <input type="textarea" th:field="*{content}"/></p>
+		<p><input type="submit" value="Post"/></p>
+	</form>
+</body>
+</html>

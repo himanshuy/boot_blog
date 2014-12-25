@@ -1,9 +1,9 @@
-package model;
+package blog.model;
 
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
-
+import org.springframework.data.mongodb.core.mapping.Document;
 public class Post {
 	
 	@Id
@@ -14,6 +14,16 @@ public class Post {
 	private Date dateCreated;
 	private String[] tags;
 
+	
+	public Post() {};
+	
+	public Post(String title, String content, Date dateCreated, String[] tags) {
+		this.title = title;
+		this.content = content;
+		this.dateCreated = dateCreated;
+		this.tags = tags;
+	}
+	
 	@Override
 	public String toString() {
 

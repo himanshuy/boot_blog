@@ -1,9 +1,9 @@
-package controller;
+package blog.controller;
 
 import java.util.List;
 
-import model.Post;
-import service.BlogRepository;
+import blog.model.Post;
+import blog.service.BlogRepository;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +25,15 @@ public class BlogController {
 		List<Post> posts = repository.findAll(); 
 		model.addAttribute("posts", posts);
 
+		return "home";
+	}
+
+	@RequestMapping(value="/createNewPost", method=RequestMethod.POST)
+	public String createNewPost(@ModelAttribute Post post, Model model) {
+		System.out.println("Blog title "+post.getTitle());
+		repository.save(post);
+		List<Post> posts = repository.findAll(); 
+		model.addAttribute("posts", posts);
 		return "home";
 	}
 }

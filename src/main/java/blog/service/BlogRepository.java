@@ -1,6 +1,6 @@
-package service;
+package blog.service;
 
-import model.Post;
+import blog.model.Post;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
