@@ -28,7 +28,13 @@ public class BlogController {
 		return "home";
 	}
 
-	@RequestMapping(value="/createNewPost", method=RequestMethod.POST)
+	@RequestMapping(value="/createPost", method=RequestMethod.GET)
+	public String getNewPost(Model model) {
+		model.addAttribute("post", new Post());
+		return "createPost";
+	}
+
+	@RequestMapping(value="/createPost", method=RequestMethod.POST)
 	public String createNewPost(@ModelAttribute Post post, Model model) {
 		System.out.println("Blog title "+post.getTitle());
 		repository.save(post);
