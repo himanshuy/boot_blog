@@ -7,18 +7,32 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <title>Spring Boot Blog</title>
     <link rel="stylesheet" type="text/css" href="css/semantic.min.css"></link>
-    <!-- <link rel="stylesheet" type="text/css" href="homepage.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/blog.css"></link>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
     <script src="../js/semantic.min.js"></script>
     <!-- <script src="homepage.js"></script> -->
 </head>
 <body>
-	<h1>Create a new post</h1>
-	<form action="#" th:action="@{/createPost}" th:object="${post}" method="post">
-		<p>Title: <input type="text" th:field="*{title}" /></p>
-		<p>Content: <input type="textarea" th:field="*{content}"/></p>
-		<p><input type="submit" value="Post"/></p>
-	</form>
+<div class="page">
+  <h2 class="ui header">
+    Your Blog
+    <div class="sub header">A blog application implemented with Spring Boot.</div>
+  </h2>
+    <div class="ui form">
+    	<h4 class="ui dividing header">New post</h4>
+    	<form action="#" th:action="@{/createPost}" th:object="${post}" method="post">
+        <div class="field">
+          <input type="text" th:field="*{title}" placeholder="Title..."/>
+        </div>
+    		<div class="field">
+          <textarea th:field="*{content}" placeholder="Content goes here..."></textarea>
+        </div>
+    		<div>
+          <input class="ui primary button" type="submit" value="Save"/> 
+        </div>
+    	</form>
+    </div>
+  </div>
 </body>
 </html>
