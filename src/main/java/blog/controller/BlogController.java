@@ -20,8 +20,8 @@ public class BlogController {
 
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String homePage(Model model) {
-
 		List<Post> posts = repository.findAll(); 
+		System.out.println("Number of posts: "+posts.size());
 		model.addAttribute("posts", posts);
 
 		return "home";

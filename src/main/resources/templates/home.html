@@ -7,25 +7,30 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <title>Spring Boot Blog</title>
     <link rel="stylesheet" type="text/css" href="css/semantic.min.css"></link>
-    <!-- <link rel="stylesheet" type="text/css" href="homepage.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/blog.css"></link>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
     <script src="../js/semantic.min.js"></script>
     <!-- <script src="homepage.js"></script> -->
 </head>
 <body>
-	<div class="ui sidebar">
-		
-	</div>
-	<div class="mainPage">
-		<h1>List of posts</h1>
-		<div th:each="post : ${posts}">
-			<p th:text="${post.title}"></p>
-		</div>
-		<div>
+	<div class="page">
+		<h2 class="ui header">
+	    	Your Blog
+	    	<div class="sub header">A blog application implemented with Semantin-UI/SpringBoot/MongoDB/.</div>
+	  	</h2>
+	  	<div class="ui divided list" th:each="post : ${posts}">
+  			<div class="item">
+  				<div class="content">
+      				<a class="header" th:text="${post.title}">Title</a>
+     				<div class="description" th:text="${post.content}">Content</div>
+     				<div class="ui divider"></div>
+    			</div>
+			</div>
+	  	</div>
+  		<div>
 			<a href="/createPost">NewPost</a>
 		</div>
 	</div>
-	
 </body>
 </html>
