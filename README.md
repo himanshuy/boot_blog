@@ -1,4 +1,9 @@
 boot_blog
 =========
 
-Blog written in Spring Boot
+Blog written with :
+
+1. Semantic-UI
+2. Spring Boot
+3. MongoDb
+
