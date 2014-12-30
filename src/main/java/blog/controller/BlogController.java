@@ -47,7 +47,6 @@ public class BlogController {
 	public String getPostContent(@PathVariable String title, Model model) {
 		Post post = repository.findByTitle(title);
 		model.addAttribute("post", post);
-		
 		return "content";
 	}
 }

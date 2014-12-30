@@ -13,11 +13,13 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'war'
 
-jar {
+war {
     baseName = 'bootBlog'
     version =  '0.1.0'
 }
+
 
 repositories {
     mavenLocal()
@@ -25,10 +27,17 @@ repositories {
     maven { url "https://repo.spring.io/libs-release" }
 }
 
+configurations {
+    providedRuntime
+}
+
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
     testCompile("junit:junit")
+	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    
 }
 
 task wrapper(type: Wrapper) {

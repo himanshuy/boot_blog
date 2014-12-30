@@ -17,7 +17,27 @@ body {
 .ui.header {
   font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
-.page {
-  margin: 1em 2em 0em 1em;
+
+
+#mainpage {
+  background-color: #FFFFFF;
+  margin: 0em auto;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  padding: 2em 2em 7em;
+  z-index: 1;
+}
+
+#posts {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.ui .divided .list {
+  padding-left: 1em;
 }
 

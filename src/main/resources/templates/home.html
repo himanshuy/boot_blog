@@ -14,11 +14,15 @@
     <script src="../js/blog.js"></script>
 </head>
 <body>
-	<div class="page">
-		<h2 class="ui header">
+
+<div id="mainpage" class="ui center aligned grid">
+  <div class="left aligned ten wide column">
+		 <h2 class="ui header">
 	    	Your Blog
 	    	<div class="sub header">A blog application implemented with Semantin-UI/SpringBoot/MongoDB/.</div>
-	  	</h2>
+	   </h2>
+
+     <div id="posts">
 	  	<div class="ui divided list" th:each="post : ${posts}">
   			<div class="item">
   				<div class="content">
@@ -29,9 +33,9 @@
     			</div>
 			</div>
 	  	</div>
-  		<div>
+      </div>
 			<a href="/createPost">NewPost</a>
-		</div>
-	</div>
+  </div>
+  </div>
 </body>
 </html>
