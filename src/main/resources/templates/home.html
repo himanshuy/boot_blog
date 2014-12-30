@@ -11,6 +11,7 @@
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
     <script src="../js/semantic.min.js"></script>
+    <script src="../js/blog.js"></script>
     <!-- <script src="homepage.js"></script> -->
 </head>
 <body>
@@ -23,6 +24,7 @@
   			<div class="item">
   				<div class="content">
       				<a class="header" th:text="${post.title}">Title</a>
+      				<div id="blogId" th:text="${post.id}" style="display: none">Id</div>
      				<div class="description" th:text="${post.content}">Content</div>
      				<div class="ui divider"></div>
     			</div>
